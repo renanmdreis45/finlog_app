@@ -16,9 +16,9 @@ abstract class ITransactionRepository {
     DateTime? endDate,
   });
   Future<Map<DateTime, double>> getMonthlyExpensesEvolution({
-    int monthsBack = 1,
+    int monthsBack = 12,
   });
   Future<Map<DateTime, double>> getWeeklyExpensesEvolution({
-    int weeksBack = 1,
+    int weeksBack = 4,
   });
 }
