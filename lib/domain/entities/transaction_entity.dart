@@ -1,13 +1,11 @@
-import 'package:equatable/equatable.dart';
-
-class TransactionEntity extends Equatable {
+class TransactionEntity {
   final String id;
   final double amount;
   final String category;
   final DateTime date;
   final String description;
 
-  const TransactionEntity({
+  const TransactionEntity._({
     required this.id,
     required this.amount,
     required this.category,
@@ -15,6 +13,16 @@ class TransactionEntity extends Equatable {
     required this.description,
   });
 
-  @override
-  List<Object?> get props => [id, amount, category, date, description];
+  factory TransactionEntity(
+          {required String id,
+          required double amount,
+          required String category,
+          required DateTime date,
+          required String description}) =>
+      TransactionEntity._(
+          id: id,
+          amount: amount,
+          category: category,
+          date: date,
+          description: description);
 }
